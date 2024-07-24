@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login and Home Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Login Section -->
+  <div id="login-section" class="page-section">
+    <div class="login-container">
+      <h2>Login</h2>
+      <form id="login-form">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username123" name="username" required><br><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="#">Sign up</a></p>
+    </div>
+  </div>
+
+  <!-- Home Page Section -->
+  <div id="home-section" class="page-section" style="display: none;">
+    <header>
+      <div class="home_container">
+        <h1>Welcome to the Home Page!</h1>
+        <nav>
+          <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a hr ef="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="container">
+        <h2>Content Area</h2>
+        <p>This is where your main content would go. You can add text, images, forms, etc.</p>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+      // For demo purposes, assume login is successful
+      // Show the home page section and hide the login section
+      document.getElementById('login-section').style.display = 'none';
+      document.getElementById('home-section').style.display = 'block';
+    });
+
+    function logout() {
+      // Add logout functionality here if needed
+      // For demo, simply reload the page to go back to login
+      window.location.href = 'index.html';
+    }
+  </script>
+
+</body>
+
+</html>
